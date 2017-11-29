@@ -1,0 +1,36 @@
+body {
+  padding:0 20px;
+  font: 14px "微软雅黑", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.page-header{
+	border-color: #cccccc;
+}
+.table-hover td{
+	vertical-align: middle !important;
+}
+.table-hover img{
+	width:120px;
+}
+
+.page-header p{
+	display: none;
+}
+
+
+.userList .change{
+	padding: 6px 12px;
+	width: 70px;
+	float: left;
+	border-radius: 4px;
+	background: transparent;
+	border:1px solid #cccccc; 
+	margin: 0 10px;
+}
+.userList button{
+	float: left;
+}

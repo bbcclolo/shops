@@ -1,0 +1,37 @@
+.shopCart .reduce,.shopCart .add{
+	height: 23px;
+	width: 17px;
+	border: 1px solid #e5e5e5;
+	background: #f0f0f0;
+	text-align: center;
+	line-height: 22px;
+	cursor: pointer;
+	color: #444444;
+	float: left;
+	position: relative;
+}
+.shopCart .reduce:hover,.shopCart .add:hover{
+	color: #f50;
+	border: 1px solid;
+	z-index: 3;
+}
+.shopCart .count{
+	float: left;
+	width: 39px;
+	height: 23px;
+	line-height: 15px;
+	border: 1px solid #bbbbbb;
+	color: #444444;
+	text-align: center;
+	padding: 4px 0;
+	background: transparent;
+	z-index: 2;
+	margin-left: -1px;
+	position: relative;
+}
+.shopCart .add{
+	margin-left: -1px;
+}
+.shopName{
+	width: 300px;
+}

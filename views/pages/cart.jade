@@ -1,0 +1,51 @@
+extends ../layout
+
+block content
+	link(rel="stylesheet",href="/css/cart.css")
+	.container
+		.row
+			table.table.table-hover
+				thead
+					tr
+						th
+							input#checkAll(type="checkbox")
+							全选
+						th 名称
+						th 价格
+						th 数量
+						th 操作
+				tbody.shopCart
+					if carts.toString()
+						each product in carts
+							tr(id="#{product._id}")
+								td(style="width:200px;")
+									input.check(type="checkbox")
+									img(src="#{product.cImgSrc}")
+								td.shopName
+									p(style="width:200px;") #{product.cName}
+								td.price #{product.cPrice}
+								td
+									span.reduce -
+									input.count(type="text",value="#{product.cCount}",maxLength="2")
+									span.add +
+								td
+									button.btn.btn-primary.delete(type="button") 删除
+				tfoot
+					td(colspan="3")
+					td(style="padding:30px 0;") 总计：
+						span#totalMoney.text-danger(style="font-size:20px;") 0.00
+					td
+						button#settle.btn.btn-success.btn-lg(type="button",data-toggle="modal",data-target="#myModal") 结算
+	#myModal.modal.fade(tabindex="-1",role="dialog",aria-labelledby="myModalLabel",aria-hidden="true")
+		.modal-dialog
+			.modal-content
+				.modal-header
+					button.close(type="button",data-dismiss="modal",aria-hidden="true") x
+					h4#myModalLabel.modal-title 温馨提示
+				.modal-body(style="font-size:20px;text-indent:2em;") 总金额：
+					span#modal-money
+				.modal-footer
+					button.btn.btn-default(type="button",data-dismiss="modal") 取消
+					button#confirmMoney.btn.btn-primary(type="button") 提交
+	script(src="/js/cart.js")
+								

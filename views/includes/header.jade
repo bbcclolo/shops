@@ -1,0 +1,12 @@
+.container
+		.row
+			.page-header.text-center
+				h1 #{title}
+				p#haveUser.user 欢迎您，
+					span.username
+					span &nbsp;|&nbsp;
+					a(href="javascript:void(0);") 安全退出
+				p#noUser.user
+					a(href="/user/regist") 注册
+					span &nbsp;|&nbsp;
+					a(href="/user/login") 登录

@@ -1,0 +1,59 @@
+extends ../layout
+
+block content
+	.container
+		.row
+			table.table.table-hover.table-bordered
+				thead
+					tr
+						th 用户名
+						th 注册时间
+						th 会员权限
+						th 操作
+						th 修改权限
+				tbody.userList
+					if users.toString()
+						each user in users
+							tr(id="#{user._id}",role="#{user.role}")
+								td #{user.username}
+								td #{moment(user.meta.createAt).format('YYYY-MM-DD hh:mm:ss A')}
+								if user.role <= 10
+									td 普通会员
+								else if user.role <= 20
+									td 白银会员
+								else if user.role <= 30
+									td 黄金会员
+								else if user.role <= 40
+									td 钻石会员
+								else if user.role <= 50
+									td 普通管理员
+								else if user.role <= 60
+									td 高级管理员
+								else if user.role > 60
+									td 顶级管理员
+								if role >= 50 && role >= user.role
+									td
+										button.btn.btn-primary(type="button") 删除
+									td
+										input.text-center.change(type="text",value="#{user.role}",maxLength="3")
+										button.btn.btn-primary.choose(type="button") 修改
+								else
+									td
+										button.btn.btn-primary(type="button",disabled) 删除
+									td
+										input.text-center.change(type="text",value="#{user.role}",disabled)
+										button.btn.btn-default(type="button",disabled) 降级
+		.row.text-center
+			ul.pagination
+				li
+					a(href="/user/list") &laquo;
+				each page,index in pages
+					if id == index+1
+						li.active
+							a(href="/user/list/#{index+1}") #{index+1}
+					else
+						li
+							a(href="/user/list/#{index+1}") #{index+1}
+				li
+					a(href="/user/list") &raquo;
+	script(src="/js/userList.js")

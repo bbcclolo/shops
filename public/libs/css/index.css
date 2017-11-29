@@ -1,0 +1,87 @@
+.content{
+	height: 80%;
+}
+.message{
+	height: 90%;
+	background: rgba(0,0,0,.2);
+	border-radius: 8px;
+	overflow-y: auto;
+}
+.user-list{
+	padding: 20px;
+	clear: both;overflow: hidden;
+}
+.user-item{
+	width: 100%;
+	float: left;
+	margin: 20px 0;
+	position: relative;
+}
+.user-item img{
+	float: left;
+	margin:0 15px 0 0;
+	width:60px;
+	height: 60px;
+}
+.user-item p{
+	float: left;
+	max-width: 60%;
+	padding: 10px 15px;
+	background: rgba(255,255,255,.3);
+	border-radius: 10px;
+	margin-top: 5px;
+	letter-spacing: 1px;
+	font-size: 16px;
+}
+.user-item.me{
+	float: right;
+}
+.user-item.me img{
+	float: right;
+	margin:0 0 0 15px;
+}
+.user-item.me p{
+	float: right;
+}
+
+.sendMsg{
+	clear: both;
+	overflow: hidden;
+	margin: 10px 0;
+}
+.sendMsg input,.sendMsg button{
+	float: left;
+	height: 50px;
+	line-height: 50px;
+	background: rgba(0,0,0,.3);
+	border-radius: 8px;
+	border:none;
+	outline: none;
+}
+.sendMsg input{
+	width: 90%;
+	font-size: 16px;
+	padding: 0 15px;
+}
+.sendMsg button{
+	width: 9%;
+	margin-left: 1%;
+	font-size: 20px;
+}
+
+
+.user-item.me .uploadFile{
+	position: absolute;
+	right:0;
+	top:0;
+	width: 60px;
+	height: 60px;
+	cursor: pointer;
+	opacity: 0;
+	border-radius: 50%;
+}
+
+
+
+
+

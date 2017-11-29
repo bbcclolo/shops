@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+	.container
+		.row
+			if products.toString()
+				each product in products
+					.col-sm-6.col-md-3
+						a.thumbnail(href="/")
+							img.img-responsive(src="#{product.imgSrc}",alt="iphone8")
+						.caption
+							h3.text-danger ￥ #{product.price}
+							p(style="font-size:12px;") #{product.name}
+							p
+								a.btn.btn-primary(href="/cart/addCart/#{product._id}",role="button") 加入购物车

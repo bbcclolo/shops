@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+	.container
+		.row
+			.col-sm-6.col-sm-offset-3
+				form#form
+					div.form-group
+						label(for="username") 用户名
+						input.form-control(type="text",id="username",name="username",placeholder="请输入用户名")
+					div.form-group
+						label(for="password") 请输入密码
+						input.form-control(type="text",id="password",name="password",placeholder="请输入密码")
+					div.form-group
+						input.btn.btn-success.form-control#login(type="button",value="登录")
+					div.form-group
+						a.btn.btn-primary.pull-right(href="/user/regist") 注册
+	script(src="/js/login.js")
